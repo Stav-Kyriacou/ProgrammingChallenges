@@ -1,0 +1,16 @@
+F:\VSProjects\Programming\ProgrammingChallenges\bin\Debug\net5.0\ProgrammingChallenges.exe
+F:\VSProjects\Programming\ProgrammingChallenges\bin\Debug\net5.0\ProgrammingChallenges.deps.json
+F:\VSProjects\Programming\ProgrammingChallenges\bin\Debug\net5.0\ProgrammingChallenges.runtimeconfig.json
+F:\VSProjects\Programming\ProgrammingChallenges\bin\Debug\net5.0\ProgrammingChallenges.runtimeconfig.dev.json
+F:\VSProjects\Programming\ProgrammingChallenges\bin\Debug\net5.0\ProgrammingChallenges.dll
+F:\VSProjects\Programming\ProgrammingChallenges\bin\Debug\net5.0\ref\ProgrammingChallenges.dll
+F:\VSProjects\Programming\ProgrammingChallenges\bin\Debug\net5.0\ProgrammingChallenges.pdb
+F:\VSProjects\Programming\ProgrammingChallenges\obj\Debug\net5.0\ProgrammingChallenges.csprojAssemblyReference.cache
+F:\VSProjects\Programming\ProgrammingChallenges\obj\Debug\net5.0\ProgrammingChallenges.GeneratedMSBuildEditorConfig.editorconfig
+F:\VSProjects\Programming\ProgrammingChallenges\obj\Debug\net5.0\ProgrammingChallenges.AssemblyInfoInputs.cache
+F:\VSProjects\Programming\ProgrammingChallenges\obj\Debug\net5.0\ProgrammingChallenges.AssemblyInfo.cs
+F:\VSProjects\Programming\ProgrammingChallenges\obj\Debug\net5.0\ProgrammingChallenges.csproj.CoreCompileInputs.cache
+F:\VSProjects\Programming\ProgrammingChallenges\obj\Debug\net5.0\ProgrammingChallenges.dll
+F:\VSProjects\Programming\ProgrammingChallenges\obj\Debug\net5.0\ref\ProgrammingChallenges.dll
+F:\VSProjects\Programming\ProgrammingChallenges\obj\Debug\net5.0\ProgrammingChallenges.pdb
+F:\VSProjects\Programming\ProgrammingChallenges\obj\Debug\net5.0\ProgrammingChallenges.genruntimeconfig.cache
