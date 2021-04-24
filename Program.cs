@@ -17,6 +17,8 @@ namespace ProgrammingChallenges
                     Challenge1();
                     break;
                 case 2:
+                    LineBreak();
+                    Challenge2();
                     break;
                 case 3:
                     break;
@@ -56,7 +58,7 @@ namespace ProgrammingChallenges
 
             foreach (char letter in word)
             {
-                wordInChars.Add(letter.ToString());    
+                wordInChars.Add(letter.ToString());
             }
 
             for (int i = 0; i < wordInChars.Count; i++)
@@ -72,5 +74,51 @@ namespace ProgrammingChallenges
             }
             return convertedWord;
         }
+
+        public static void Challenge2()
+        {
+            string[] array1 = {"yes", "yes", "no", "no", "maybe", "maybe"};
+            string[] array2 = RemoveDups(array1);
+
+            foreach (string item in array2)
+            {
+                Console.Write(item);
+                Console.Write(", ");
+            }
+        }
+        public static string[] RemoveDups(string[] items)
+        {
+            //add the first item in the array to a list
+            //when adding the next items, loop through the list and check if there are any matches, only add to the list if the matches = 0
+
+            List<string> noDupes = new List<string>();
+            int matchCount = 0;
+
+            for (int i = 0; i < items.Length; i++)
+            {
+                for (int j = 0; j < noDupes.Count; i++)
+                {
+                    if (i == j)
+                    {
+                        matchCount++;
+                    }
+                }
+                if (matchCount == 0)
+                {
+                    noDupes.Add(items[i]);
+                }
+            }
+
+            string[] returnArray = new string[noDupes.Count];
+            for(int i = 0; i < returnArray.Length; i++)
+            {
+                returnArray[i] = noDupes[i];
+            }
+
+            return returnArray;
+
+        }
+
+
     }
 }
