@@ -149,47 +149,48 @@ namespace ProgrammingChallenges
         }
         public static void Challenge3()
         {
-            Console.WriteLine(ConvertNumbers("zero one zero one zero one zero one"));
-            Console.WriteLine(ConvertNumbers("one zero one zero one zero one zero one zero one zero"));
+            Console.WriteLine(ConvertNumbers("one one"));
         }
         public static string ConvertNumbers(string text)
         {
-            //loop through each character in the string
-            //check for a space
-            //take the index of the space, go from the last space and add each character to a string
-            //add the string to a list
             //"zero one zero one zero one zero one"
+
+            //BUG: the last word doesnt get converted because it is looking for a space after the word
+            //SOLUTION: instead of looking for a space, check if the word has been completed
 
             string convertedWord = "";
             string tempString = "";
             int lastSpaceIndex = 0;
             int currentSpaceIndex = 0;
-
+    
             for (int i = 0; i < text.Length; i++)
             {
-                if (text[i] == ' ')
+                if (text[i] == ' ' || i == text.Length - 1)
                 {
-                    currentSpaceIndex = i;
+                    currentSpaceIndex = i;                                          //get the index a space
 
                     for (int j = lastSpaceIndex; j < currentSpaceIndex; j++)
                     {
-                        tempString += text[j];
+                        tempString += text[j];                                      //add each character from the last space to the current space to a temp string
                     }
 
-                    if (tempString == "zero")
+                    if (tempString.ToUpper() == "ZERO")                                       //add a 0 or 1 to the converted word depending on the result of the temp string
                     {
                         convertedWord += "0";
                     }
-                    else if (tempString == "one")
+                    else if (tempString.ToUpper() == "ONE")
                     {
                         convertedWord += "1";
                     }
 
-                    lastSpaceIndex = currentSpaceIndex + 1;
+                    lastSpaceIndex = currentSpaceIndex + 1;                         //update the last space index. +1 because to move past the space index to the next character
 
-                    tempString = "";
+                    tempString = "";                                                //reset the temp string
                 }
             }
+
+            //get the length of the converted word
+            //
 
             return convertedWord;
         }
