@@ -46,6 +46,8 @@ namespace ProgrammingChallenges
             Console.WriteLine();
             Console.WriteLine("------------------------------");
         }
+
+        //--------------------------------------CHALLENGE 1------------------------------------
         public static void Challenge1()
         {
             Console.Write("Enter a word: ");
@@ -77,6 +79,7 @@ namespace ProgrammingChallenges
             return convertedWord;
         }
 
+        //--------------------------------------CHALLENGE 2------------------------------------
         public static void Challenge2()
         {
             string[] array1 = { "yes", "yes", "no", "no", "maybe", "maybe" };
@@ -140,13 +143,18 @@ namespace ProgrammingChallenges
                 }
             }
 
-            Console.WriteLine();
-            foreach (string item in noDupes)
+            //write the array with no duplicates to console
+            for (int i = 0; i < noDupes.Length; i++)
             {
-                Console.Write(item);
-                Console.Write(",");
+                Console.Write(noDupes[i]);
+                if (i != noDupes.Length - 1)
+                {
+                    Console.Write(", ");
+                }
             }
         }
+
+        //--------------------------------------CHALLENGE 3------------------------------------
         public static void Challenge3()
         {
             Console.WriteLine(ConvertNumbers("one one"));
@@ -174,7 +182,7 @@ namespace ProgrammingChallenges
                         tempString += text[j];                                      //add each character from the last space to the current space to a temp string
                     }
 
-                    if (tempString.ToUpper() == "ZERO")                                       //add a 0 or 1 to the converted word depending on the result of the temp string
+                    if (tempString.ToUpper() == "ZERO")                             //add a 0 or 1 to the converted word depending on the result of the temp string
                     {
                         convertedWord += "0";
                     }
@@ -190,10 +198,8 @@ namespace ProgrammingChallenges
             }
 
             //get the length of the converted word
-            //
 
             return convertedWord;
         }
-
     }
 }
