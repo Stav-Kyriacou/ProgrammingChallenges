@@ -21,6 +21,8 @@ namespace ProgrammingChallenges
                     Challenge2();
                     break;
                 case 3:
+                    LineBreak();
+                    Challenge3();
                     break;
                 case 4:
                     break;
@@ -77,15 +79,15 @@ namespace ProgrammingChallenges
 
         public static void Challenge2()
         {
-            string[] array1 = {"yes", "yes", "no", "no", "maybe", "maybe"};
+            string[] array1 = { "yes", "yes", "no", "no", "maybe", "maybe" };
             RemoveDups(array1);
         }
         public static void RemoveDups(string[] items)
-        {         
+        {
             //create a temp array of the same size
             //add the first item from items to temp array
             //when adding the following items, check all items in the temp array
-                //if it doesnt match with anything add it
+            //if it doesnt match with anything add it
             //loop through the temp array
             //everytime the item != null, add to counter
             //create a new array = to the counter size
@@ -101,7 +103,7 @@ namespace ProgrammingChallenges
             {
                 for (int j = 0; j < tempItems.Length; j++)
                 {
-                    if(tempItems[j] == items[i])
+                    if (tempItems[j] == items[i])
                     {
                         match = true;
                     }
@@ -114,7 +116,7 @@ namespace ProgrammingChallenges
             }
 
             //counts what isnt null in the temp array, this will be the size of the final array
-            int counter = 0; 
+            int counter = 0;
             foreach (string item in tempItems)
             {
                 if (item != null)
@@ -144,6 +146,52 @@ namespace ProgrammingChallenges
                 Console.Write(item);
                 Console.Write(",");
             }
+        }
+        public static void Challenge3()
+        {
+            Console.WriteLine(ConvertNumbers("zero one zero one zero one zero one"));
+            Console.WriteLine(ConvertNumbers("one zero one zero one zero one zero one zero one zero"));
+        }
+        public static string ConvertNumbers(string text)
+        {
+            //loop through each character in the string
+            //check for a space
+            //take the index of the space, go from the last space and add each character to a string
+            //add the string to a list
+            //"zero one zero one zero one zero one"
+
+            string convertedWord = "";
+            string tempString = "";
+            int lastSpaceIndex = 0;
+            int currentSpaceIndex = 0;
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text[i] == ' ')
+                {
+                    currentSpaceIndex = i;
+
+                    for (int j = lastSpaceIndex; j < currentSpaceIndex; j++)
+                    {
+                        tempString += text[j];
+                    }
+
+                    if (tempString == "zero")
+                    {
+                        convertedWord += "0";
+                    }
+                    else if (tempString == "one")
+                    {
+                        convertedWord += "1";
+                    }
+
+                    lastSpaceIndex = currentSpaceIndex + 1;
+
+                    tempString = "";
+                }
+            }
+
+            return convertedWord;
         }
 
     }
