@@ -78,47 +78,73 @@ namespace ProgrammingChallenges
         public static void Challenge2()
         {
             string[] array1 = {"yes", "yes", "no", "no", "maybe", "maybe"};
-            string[] array2 = RemoveDups(array1);
-
-            foreach (string item in array2)
-            {
-                Console.Write(item);
-                Console.Write(", ");
-            }
+            RemoveDups(array1);
         }
-        public static string[] RemoveDups(string[] items)
-        {
-            //add the first item in the array to a list
-            //when adding the next items, loop through the list and check if there are any matches, only add to the list if the matches = 0
+        public static void RemoveDups(string[] items)
+        {         
+            //create a temp array of the same size
+            //add the first item from items to temp array
+            //when adding the following items, check all items in the temp array
+                //if it doesnt match with anything add it
+            //loop through the temp array
+            //everytime the item != null, add to counter
+            //create a new array = to the counter size
 
-            List<string> noDupes = new List<string>();
-            int matchCount = 0;
+            //add items from temp array to new array
+            //return new array
 
+            string[] tempItems = new string[items.Length];
+            bool match = false;
+
+            //writes each item into a temp array only if it doesnt already exist in the temp array
             for (int i = 0; i < items.Length; i++)
             {
-                for (int j = 0; j < noDupes.Count; i++)
+                for (int j = 0; j < tempItems.Length; j++)
                 {
-                    if (i == j)
+                    if(tempItems[j] == items[i])
                     {
-                        matchCount++;
+                        match = true;
                     }
                 }
-                if (matchCount == 0)
+                if (!match)
                 {
-                    noDupes.Add(items[i]);
+                    tempItems[i] = items[i];
+                }
+                match = false;
+            }
+
+            //counts what isnt null in the temp array, this will be the size of the final array
+            int counter = 0; 
+            foreach (string item in tempItems)
+            {
+                if (item != null)
+                {
+                    counter++;
                 }
             }
 
-            string[] returnArray = new string[noDupes.Count];
-            for(int i = 0; i < returnArray.Length; i++)
+            //create the final array
+            string[] noDupes = new string[counter];
+            int counter2 = 0;
+
+            //add the non null items into the final array
+            //the counter represents the index where to place it in the array so it doesnt go out of bounds
+            for (int i = 0; i < tempItems.Length; i++)
             {
-                returnArray[i] = noDupes[i];
+                if (tempItems[i] != null)
+                {
+                    noDupes[counter2] = tempItems[i];
+                    counter2++;
+                }
             }
 
-            return returnArray;
-
+            Console.WriteLine();
+            foreach (string item in noDupes)
+            {
+                Console.Write(item);
+                Console.Write(",");
+            }
         }
-
 
     }
 }
