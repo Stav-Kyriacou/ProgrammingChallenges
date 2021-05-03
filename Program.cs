@@ -29,6 +29,8 @@ namespace ProgrammingChallenges
                     Challenge4();
                     break;
                 case 5:
+                    LineBreak();
+                    Challenge5();
                     break;
                 case 6:
                     break;
@@ -283,5 +285,17 @@ namespace ProgrammingChallenges
             }
             return answer;
         }
+        //--------------------------------------CHALLENGE 5------------------------------------
+        public static void Challenge5()
+        {
+
+        }
+        public static int[] LargestIntFromArrays()
+        {
+            return null;
+        }
+
+
+
     }
 }
