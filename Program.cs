@@ -308,13 +308,8 @@ namespace ProgrammingChallenges
             new float[] { 1.324f, 9.32f, 2.5423f, 6.4314f },
             new float[] { 9, 3, 6, 3 }
             };
-            // Console.WriteLine(items[0].Length);
-            // Console.WriteLine(items[1].Length);
-            // Console.WriteLine(items[2].Length);
 
-            float[] largestNums = LargestIntFromArrays(items2);
-
-            foreach (float num in largestNums)
+            foreach (float num in LargestIntFromArrays(items3))
             {
                 Console.Write(num);
                 Console.Write(",");
@@ -327,7 +322,7 @@ namespace ProgrammingChallenges
             //loop through the current array
             //compare current index to the largest
             //once looped through current array, set index 0 of largest array to the found number
-            
+
             float[] largestNumsArray = new float[items.Length];             //create a new array to store the largest numbers of each array
 
             for (int i = 0; i < items.Length; i++)                          //loop through each array
