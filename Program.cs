@@ -25,6 +25,8 @@ namespace ProgrammingChallenges
                     Challenge3();
                     break;
                 case 4:
+                    LineBreak();
+                    Challenge4();
                     break;
                 case 5:
                     break;
@@ -40,7 +42,6 @@ namespace ProgrammingChallenges
                     break;
             }
         }
-
         public static void LineBreak()
         {
             Console.WriteLine();
@@ -82,7 +83,7 @@ namespace ProgrammingChallenges
         //--------------------------------------CHALLENGE 2------------------------------------
         public static void Challenge2()
         {
-            string[] array1 = { "yes", "yes", "no", "no", "maybe", "maybe" };
+            string[] array1 = { "yes", "yes", "yes", "no", "no", "no", "maybe", "maybe", "maybe" };
             RemoveDups(array1);
         }
         public static void RemoveDups(string[] items)
@@ -157,13 +158,11 @@ namespace ProgrammingChallenges
         //--------------------------------------CHALLENGE 3------------------------------------
         public static void Challenge3()
         {
-            Console.WriteLine(ConvertNumbers("one zero one"));
+            Console.WriteLine(ConvertTextToBinary("one one one one one one one one one one one one one one one one zero"));
         }
-        public static string ConvertNumbers(string text)
+        public static string ConvertTextToBinary(string text)
         {
-            //"zero one zero one zero one zero one"
-
-            string convertedWord = "";
+            string convertedString = "";
             string tempString = "";
             int previousSpace = 0;
             int currentSpace = 0;
@@ -179,7 +178,7 @@ namespace ProgrammingChallenges
                         tempString += text[j];                                  //add each character from the last space to the current space to a temp string
                     }
 
-                    convertedWord += CheckZeroOne(tempString);                  //add '1' or '0' to the converted word
+                    convertedString += CheckZeroOne(tempString);                //add '1' or '0' to the converted word
                     previousSpace = currentSpace + 1;                           //update the last space index. +1 because to move past the space index to the next character
                     tempString = "";                                            //reset the temp string
                 }
@@ -190,14 +189,43 @@ namespace ProgrammingChallenges
                         tempString += text[j];
                     }
 
-                    convertedWord += CheckZeroOne(tempString);                  //add '1' or '0' to the converted word
+                    convertedString += CheckZeroOne(tempString);                //add '1' or '0' to the converted word
                     tempString = "";                                            //reset the temp string
                 }
             }
 
-            //get the length of the converted word
+            //make the string a multiple of 8
+            if (convertedString.Length > 8)
+            {
+                if (convertedString.Length % 8 == 0)                            //string length is greater than 8 and also a multiple of 8, just return the string                        
+                {
+                    return convertedString;
+                }
+                else
+                {
+                    int length = 0;
+                    for (int i = 1; i < convertedString.Length; i++)            //string is not a multiple of 8
+                    {
+                        if ((convertedString.Length - i) % 8 == 0)              //reduce string length until it is a multiple of 8
+                        {
+                            length = convertedString.Length - i;                //store the current length of the string
+                            break;
+                        }
+                    }
+                    
+                    string shortenedString = "";
+                    for (int i = 0; i < length; i++)                            //add each character from the string up to the length which is a multiple of 8
+                    {
+                        shortenedString += convertedString[i];
+                    }
 
-            return convertedWord;
+                    return shortenedString;
+                }
+            }
+            else
+            {
+                return convertedString;
+            }
         }
         public static string CheckZeroOne(string word)
         {
@@ -214,6 +242,28 @@ namespace ProgrammingChallenges
             {
                 return null;
             }
+        }
+
+        //--------------------------------------CHALLENGE 4------------------------------------
+        public static void Challenge4()
+        {
+
+        }
+        public static int ConvertBinaryStringToDecimal()
+        {
+            //010101
+            //0,2,4,8,16,32
+            //1+0+4+0+16
+            //21
+
+            //the first index is 1
+            //the second index onwards is (N-1)^2 
+
+            //reverse the string. can use Array.Reverse(array)
+            //loop through each character in the string
+            //if the index is 
+
+            return 0;
         }
     }
 }
