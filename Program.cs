@@ -212,7 +212,7 @@ namespace ProgrammingChallenges
                             break;
                         }
                     }
-                    
+
                     string shortenedString = "";
                     for (int i = 0; i < length; i++)                            //add each character from the string up to the length which is a multiple of 8
                     {
@@ -247,49 +247,40 @@ namespace ProgrammingChallenges
         //--------------------------------------CHALLENGE 4------------------------------------
         public static void Challenge4()
         {
-            Console.WriteLine(ConvertBinaryStringToDecimal("010101"));
+            Console.Write("Enter a binary number: ");
+            string input = Console.ReadLine();
+            Console.WriteLine("{0} converted to a decimal number is: {1}", input, ConvertBinaryStringToDecimal(input));
         }
         public static int ConvertBinaryStringToDecimal(string s)
         {
-            //010101
-            //0,2,4,8,16,32
-            //1+0+4+0+16
-            //21
+            //1,2,4,8,16,32,64
+            //2^index
 
-            //the first index is 1
-            //the second index onwards is n^2 
-
-            //reverse the string. can use Array.Reverse(array)
+            //reverse the string to make the loop simpler. can use Array.Reverse(array)
             //loop through each character in the string
-            //for the first index, answer += 1 or 0 because 0^2 = 0
-                //if the index is 1
-                    //add n^2 to the answer
-                //else
-                    //dont add anything
+            //for the first index, answer += 1 or 0 because 2^0 = 0
+            //if the index is 1
+            //add n^2 to the answer
 
             char[] chars = s.ToCharArray();
-            Array.Reverse(chars);
+            Array.Reverse(chars);                                           //reverse the array to make the loop calculations easier to maange
 
             int answer = 0;
 
             for (int i = 0; i < chars.Length; i++)
             {
-                if (i == 0)
+                if (chars[i] == '1')                                        //only need to count 1's
                 {
-                    if (chars[i] == '1')
+                    if (i == 0)
                     {
-                        answer += 1;
+                        answer += 1;                                        //if the first index is a 1, using the formula wont work because 2^0 equals 0
                     }
-                }
-                else
-                {
-                    if (chars[i] == '1')
+                    else
                     {
-                        answer += (int)Math.Pow(i, 2);
+                        answer += (int)Math.Pow(2, i);                      //2^i gives the value of that index. just add that to the answer
                     }
                 }
             }
-
             return answer;
         }
     }
