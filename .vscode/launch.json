@@ -12,7 +12,7 @@
             "program": "${workspaceFolder}/bin/Debug/net5.0/ProgrammingChallenges.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "console": "integratedTerminal",
+            "console":"integratedTerminal",
             "stopAtEntry": false
         },
         {

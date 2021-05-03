@@ -288,11 +288,66 @@ namespace ProgrammingChallenges
         //--------------------------------------CHALLENGE 5------------------------------------
         public static void Challenge5()
         {
+            float[][] items =
+            {
+            new float[] { 4, 2, 7, 1 },
+            new float[] { 20, 70, 40, 90 },
+            new float[] { 1, 2, 0 }
+            };
+
+            float[][] items2 =
+            {
+            new float[] { -34, -54, -74 },
+            new float[] { -2, -32, -65 },
+            new float[] { -54, 7, -43}
+            };
+
+            float[][] items3 =
+            {
+            new float[] { 0.4321f, 0.7634f, 0.652f },
+            new float[] { 1.324f, 9.32f, 2.5423f, 6.4314f },
+            new float[] { 9, 3, 6, 3 }
+            };
+            // Console.WriteLine(items[0].Length);
+            // Console.WriteLine(items[1].Length);
+            // Console.WriteLine(items[2].Length);
+
+            float[] largestNums = LargestIntFromArrays(items2);
+
+            foreach (float num in largestNums)
+            {
+                Console.Write(num);
+                Console.Write(",");
+            }
 
         }
-        public static int[] LargestIntFromArrays()
+        public static float[] LargestIntFromArrays(float[][] items)
         {
-            return null;
+            //loop through the amount of arrays
+            //loop through the current array
+            //compare current index to the largest
+            //once looped through current array, set index 0 of largest array to the found number
+            
+            float[] largestNumsArray = new float[items.Length];             //create a new array to store the largest numbers of each array
+
+            for (int i = 0; i < items.Length; i++)                          //loop through each array
+            {
+                float largestNum = 0f;
+
+                for (int j = 0; j < items[i].Length; j++)                   //loop through the current array
+                {
+                    if (j == 0)
+                    {
+                        largestNum = items[i][j];                           //set the largest num as the first index in case of negative numbers
+                    }
+                    else if (items[i][j] > largestNum)
+                    {
+                        largestNum = items[i][j];                           //if the array index is greater than the currrent largest number, set it as the new largest
+                    }
+                    largestNumsArray[i] = largestNum;                       //put the largest number in the largestNumsArray
+                }
+            }
+            return largestNumsArray;
         }
 
 
