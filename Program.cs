@@ -247,7 +247,7 @@ namespace ProgrammingChallenges
         //--------------------------------------CHALLENGE 4------------------------------------
         public static void Challenge4()
         {
-            ConvertBinaryStringToDecimal("010101");
+            Console.WriteLine(ConvertBinaryStringToDecimal("010101"));
         }
         public static int ConvertBinaryStringToDecimal(string s)
         {
@@ -257,13 +257,13 @@ namespace ProgrammingChallenges
             //21
 
             //the first index is 1
-            //the second index onwards is (N-1)^2 
+            //the second index onwards is n^2 
 
             //reverse the string. can use Array.Reverse(array)
             //loop through each character in the string
             //for the first index, answer += 1 or 0 because 0^2 = 0
                 //if the index is 1
-                    //add (n-1)^2 to the answer
+                    //add n^2 to the answer
                 //else
                     //dont add anything
 
@@ -285,12 +285,12 @@ namespace ProgrammingChallenges
                 {
                     if (chars[i] == '1')
                     {
-                        
+                        answer += (int)Math.Pow(i, 2);
                     }
                 }
             }
 
-            return 0;
+            return answer;
         }
     }
 }
