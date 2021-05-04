@@ -350,24 +350,16 @@ namespace ProgrammingChallenges
             //     int value = alphabet[i];
             //     Console.WriteLine(value);
             // }
-            // char A = 'A';
-            // char B = 'B';
-            // int a = A;
-            // int b = B;
-            // Console.WriteLine(a);
-            // Console.WriteLine(b);
 
-            Console.WriteLine("Comparing patterns ABAB and CDCD. Same pattern: {0}", SameLetterPattern("ABAB", "CDCD"));
-            Console.WriteLine("Comparing patterns ABCBA and BCDCB. Same pattern: {0}", SameLetterPattern("ABCBA", "BCDCB"));
-            Console.WriteLine("Comparing patterns FFGG and ABAB. Same pattern: {0}", SameLetterPattern("FFGG", "ABAB"));
-            Console.WriteLine("Comparing patterns ABCD and FFFF. Same pattern: {0}", SameLetterPattern("ABCD", "FFFF"));
-
+            SameLetterPattern("ABAB", "CDCD");
+            SameLetterPattern("ABCBA", "BCDCB");
+            SameLetterPattern("FFGG", "ABAB");
+            SameLetterPattern("ABCD", "FFFF");
+            SameLetterPattern("ABCDCBA", "BCDEDCB");
 
         }
         public static bool SameLetterPattern(string first, string second)
         {
-            //for the letter pattern recognition thing
-            //find out what the code for each character is e.g A might be 11 or something, i cant remember how to find what the code is
             //find the smallest code in the pattern
             //substract the smallest from each character in the pattern, store the result in a string.
             //e.g ABAB      A=4 B=5
@@ -407,10 +399,12 @@ namespace ProgrammingChallenges
 
             if (patternCodes[0] == patternCodes[1])                         //compare the pattern codees of the 2 strings
             {
+                Console.WriteLine("{0}, {1}. Same pattern: True", patterns[0], patterns[1]);
                 return true;
             }
             else
             {
+                Console.WriteLine("{0}, {1}. Same pattern: False", patterns[0], patterns[1]);
                 return false;
             }
         }
