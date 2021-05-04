@@ -36,14 +36,6 @@ namespace ProgrammingChallenges
                     LineBreak();
                     Challenge6();
                     break;
-                case 7:
-                    break;
-                case 8:
-                    break;
-                case 9:
-                    break;
-                default:
-                    break;
             }
         }
         public static void LineBreak()
@@ -342,6 +334,7 @@ namespace ProgrammingChallenges
             }
             return largestNumsArray;
         }
+        //--------------------------------------CHALLENGE 6------------------------------------
         public static void Challenge6()
         {
             // string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
