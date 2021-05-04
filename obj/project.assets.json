@@ -8,19 +8,23 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\stavr\\.nuget\\packages\\": {}
+    "C:\\Users\\Stavros\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\stavr\\SwinUni\\Programming\\ProgrammingChallenges\\ProgrammingChallenges.csproj",
+      "projectUniqueName": "F:\\VSProjects\\Programming\\ProgrammingChallenges\\ProgrammingChallenges.csproj",
       "projectName": "ProgrammingChallenges",
-      "projectPath": "C:\\Users\\stavr\\SwinUni\\Programming\\ProgrammingChallenges\\ProgrammingChallenges.csproj",
-      "packagesPath": "C:\\Users\\stavr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\stavr\\SwinUni\\Programming\\ProgrammingChallenges\\obj\\",
+      "projectPath": "F:\\VSProjects\\Programming\\ProgrammingChallenges\\ProgrammingChallenges.csproj",
+      "packagesPath": "C:\\Users\\Stavros\\.nuget\\packages\\",
+      "outputPath": "F:\\VSProjects\\Programming\\ProgrammingChallenges\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\stavr\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Stavros\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -58,7 +62,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

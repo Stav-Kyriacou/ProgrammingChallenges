@@ -33,6 +33,8 @@ namespace ProgrammingChallenges
                     Challenge5();
                     break;
                 case 6:
+                    LineBreak();
+                    Challenge6();
                     break;
                 case 7:
                     break;
@@ -346,6 +348,35 @@ namespace ProgrammingChallenges
         }
 
 
+        //for the letter pattern recognition thing
+        //find out what the code for each character is e.g A might be 11 or something, i cant remember how to find what the code is
+        //find the smallest code in the pattern
+        //substract the smallest from each character in the pattern, store the result in a string.
+        //e.g ABAB      A=4 B=5
+        //loop through and find the smallest code.... which would be A
+        //4-4=0, 5-4=1, 4-4=0, 5-4=1.    the pattern would be 0101
+        //repeat for the other string, then compare the pattern numbers
 
+        public static void Challenge6()
+        {
+            string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            for (int i = 0; i < alphabet.Length; i++)
+            {
+                int value = alphabet[i];
+                Console.WriteLine(value);
+            }
+            // char A = 'A';
+            // char B = 'B';
+            // int a = A;
+            // int b = B;
+            // Console.WriteLine(a);
+            // Console.WriteLine(b);
+
+        }
+        public static bool SameLetterPattern()
+        {
+            
+            return false;
+        }
     }
 }
