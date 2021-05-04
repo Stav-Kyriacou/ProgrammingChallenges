@@ -382,22 +382,22 @@ namespace ProgrammingChallenges
 
             for (int i = 0; i < patterns.Length; i++)
             {
-                for (int j = 0; j < patterns[i].Length; j++)
+                for (int j = 0; j < patterns[i].Length; j++)                //loops through all chars of each word. find the lowest acii value
                 {
                     int ascValue = patterns[i][j];
 
                     if (j == 0)
                     {
-                        lowestAsc = ascValue;
+                        lowestAsc = ascValue;                               //assign the first value as the lowest to begin with
                     }
 
                     if (ascValue < lowestAsc)
                     {
-                        lowestAsc = ascValue;
+                        lowestAsc = ascValue;                               //set lowest when a new lowest is found
                     }
                 }
 
-                for (int j = 0; j < patterns[i].Length; j++)
+                for (int j = 0; j < patterns[i].Length; j++)                //subtract the lowestAsc from all the string's ascii values to get the pattern code
                 {
                     int value = patterns[i][j];
 
@@ -405,7 +405,7 @@ namespace ProgrammingChallenges
                 }
             }
 
-            if (patternCodes[0] == patternCodes[1])
+            if (patternCodes[0] == patternCodes[1])                         //compare the pattern codees of the 2 strings
             {
                 return true;
             }
