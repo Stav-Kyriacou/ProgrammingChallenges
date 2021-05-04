@@ -51,7 +51,6 @@ namespace ProgrammingChallenges
             Console.WriteLine();
             Console.WriteLine("------------------------------");
         }
-
         //--------------------------------------CHALLENGE 1------------------------------------
         public static void Challenge1()
         {
@@ -83,7 +82,6 @@ namespace ProgrammingChallenges
             }
             return convertedWord;
         }
-
         //--------------------------------------CHALLENGE 2------------------------------------
         public static void Challenge2()
         {
@@ -158,7 +156,6 @@ namespace ProgrammingChallenges
                 }
             }
         }
-
         //--------------------------------------CHALLENGE 3------------------------------------
         public static void Challenge3()
         {
@@ -247,7 +244,6 @@ namespace ProgrammingChallenges
                 return null;
             }
         }
-
         //--------------------------------------CHALLENGE 4------------------------------------
         public static void Challenge4()
         {
@@ -346,25 +342,14 @@ namespace ProgrammingChallenges
             }
             return largestNumsArray;
         }
-
-
-        //for the letter pattern recognition thing
-        //find out what the code for each character is e.g A might be 11 or something, i cant remember how to find what the code is
-        //find the smallest code in the pattern
-        //substract the smallest from each character in the pattern, store the result in a string.
-        //e.g ABAB      A=4 B=5
-        //loop through and find the smallest code.... which would be A
-        //4-4=0, 5-4=1, 4-4=0, 5-4=1.    the pattern would be 0101
-        //repeat for the other string, then compare the pattern numbers
-
         public static void Challenge6()
         {
-            string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            for (int i = 0; i < alphabet.Length; i++)
-            {
-                int value = alphabet[i];
-                Console.WriteLine(value);
-            }
+            // string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            // for (int i = 0; i < alphabet.Length; i++)
+            // {
+            //     int value = alphabet[i];
+            //     Console.WriteLine(value);
+            // }
             // char A = 'A';
             // char B = 'B';
             // int a = A;
@@ -372,11 +357,62 @@ namespace ProgrammingChallenges
             // Console.WriteLine(a);
             // Console.WriteLine(b);
 
+            Console.WriteLine("Comparing patterns ABAB and CDCD. Same pattern: {0}", SameLetterPattern("ABAB", "CDCD"));
+            Console.WriteLine("Comparing patterns ABCBA and BCDCB. Same pattern: {0}", SameLetterPattern("ABCBA", "BCDCB"));
+            Console.WriteLine("Comparing patterns FFGG and ABAB. Same pattern: {0}", SameLetterPattern("FFGG", "ABAB"));
+            Console.WriteLine("Comparing patterns ABCD and FFFF. Same pattern: {0}", SameLetterPattern("ABCD", "FFFF"));
+
+
         }
-        public static bool SameLetterPattern()
+        public static bool SameLetterPattern(string first, string second)
         {
-            
-            return false;
+            //for the letter pattern recognition thing
+            //find out what the code for each character is e.g A might be 11 or something, i cant remember how to find what the code is
+            //find the smallest code in the pattern
+            //substract the smallest from each character in the pattern, store the result in a string.
+            //e.g ABAB      A=4 B=5
+            //loop through and find the smallest code.... which would be A
+            //4-4=0, 5-4=1, 4-4=0, 5-4=1.    the pattern would be 0101
+            //repeat for the other string, then compare the pattern numbers   
+
+            string[] patterns = { first, second };
+            string[] patternCodes = { "", "" };
+
+            int lowestAsc = 0;
+
+            for (int i = 0; i < patterns.Length; i++)
+            {
+                for (int j = 0; j < patterns[i].Length; j++)
+                {
+                    int ascValue = patterns[i][j];
+
+                    if (j == 0)
+                    {
+                        lowestAsc = ascValue;
+                    }
+
+                    if (ascValue < lowestAsc)
+                    {
+                        lowestAsc = ascValue;
+                    }
+                }
+
+                for (int j = 0; j < patterns[i].Length; j++)
+                {
+                    int value = patterns[i][j];
+
+                    patternCodes[i] += value - lowestAsc;
+                }
+            }
+
+            if (patternCodes[0] == patternCodes[1])
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
