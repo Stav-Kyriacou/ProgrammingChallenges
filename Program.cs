@@ -40,7 +40,6 @@ namespace ProgrammingChallenges
         }
         public static void LineBreak()
         {
-            Console.WriteLine();
             Console.WriteLine("------------------------------");
         }
         //--------------------------------------CHALLENGE 1------------------------------------
@@ -78,6 +77,17 @@ namespace ProgrammingChallenges
         public static void Challenge2()
         {
             string[] array1 = { "yes", "yes", "yes", "no", "no", "no", "maybe", "maybe", "maybe" };
+            Console.Write("Array of words: ");
+            for (int i = 0; i < array1.Length; i++)
+            {
+                Console.Write(array1[i]);
+                if (i < array1.Length - 1)
+                {
+                    Console.Write(", ");
+                }
+            }
+            Console.WriteLine();
+            Console.Write("Same array with the duplicates removed: ");
             RemoveDups(array1);
         }
         public static void RemoveDups(string[] items)
@@ -151,7 +161,9 @@ namespace ProgrammingChallenges
         //--------------------------------------CHALLENGE 3------------------------------------
         public static void Challenge3()
         {
-            Console.WriteLine(ConvertTextToBinary("one one one one one one one one one one one one one one one one zero"));
+            Console.WriteLine("Text: one zero one zero zero one");
+            Console.Write("Text converted to binary: ");
+            Console.Write(ConvertTextToBinary("one zero one zero zero one"));
         }
         public static string ConvertTextToBinary(string text)
         {
@@ -299,12 +311,31 @@ namespace ProgrammingChallenges
             new float[] { 9, 3, 6, 3 }
             };
 
-            foreach (float num in LargestIntFromArrays(items3))
+            Console.WriteLine("Jagged array: ");
+            for (int i = 0; i < items.Length; i++)
             {
-                Console.Write(num);
-                Console.Write(",");
+                for (int j = 0; j < items[i].Length; j++)
+                {
+                    Console.Write(items[i][j]);
+                    if (j < items[i].Length - 1)
+                    {
+                        Console.Write(", ");
+                    }
+                }
+                Console.WriteLine();
             }
+            Console.WriteLine();
+            Console.Write("The largest numbers from each array are: ");
+            float[] largestNums = LargestIntFromArrays(items);
 
+            for (int i = 0; i < largestNums.Length; i++)
+            {
+                Console.Write(largestNums[i]);
+                if (i < largestNums.Length - 1)
+                {
+                    Console.Write(", ");
+                }
+            }
         }
         public static float[] LargestIntFromArrays(float[][] items)
         {
@@ -349,7 +380,7 @@ namespace ProgrammingChallenges
             SameLetterPattern("FFGG", "ABAB");
             SameLetterPattern("ABCD", "FFFF");
             SameLetterPattern("ABCDCBA", "BCDEDCB");
-
+            SameLetterPattern("ABCD", "EFGH");
         }
         public static bool SameLetterPattern(string first, string second)
         {
