@@ -36,6 +36,12 @@ namespace ProgrammingChallenges
                     LineBreak();
                     Challenge6();
                     break;
+                case 7:
+                    LineBreak();
+                    Challenge7();
+                    break;
+                default:
+                    break;
             }
         }
         public static void LineBreak()
@@ -429,6 +435,55 @@ namespace ProgrammingChallenges
             else
             {
                 Console.WriteLine("{0}, {1}. Same pattern: False", patterns[0], patterns[1]);
+                return false;
+            }
+        }
+
+        //--------------------------------------CHALLENGE 7------------------------------------
+        public static void Challenge7()
+        {
+            //the largest palindrome made from the product of two 2-digit numbers is 9009 = 91 * 98
+            //find the largest palindrome made from the product of two 3-digit numbers
+            int largestPalindrome = 0;
+            int num1 = 0;
+            int num2 = 0;
+
+            for (int i = 100; i < 1000; i++)
+            {
+                for (int j = 100; j < 1000; j++)
+                {
+                    int currentNumber = i * j;
+
+                    if (CheckPalindrome(currentNumber) && currentNumber > largestPalindrome)
+                    {
+                        largestPalindrome = currentNumber;
+                        num1 = i;
+                        num2 = i;
+
+                    }
+                }
+            }
+            Console.WriteLine($"Largest palindrome from product of two 3-digit numbers is {largestPalindrome}, {num1} x {num2}");
+
+        }
+        public static bool CheckPalindrome(int number)
+        {
+            string convertedNumber = number.ToString();
+            string temp = "";
+
+            for (int i = convertedNumber.Length - 1; i >= 0; i--)
+            {
+                temp += convertedNumber[i];
+            }
+
+            int reverseNumber = int.Parse(temp);
+
+            if (number == reverseNumber)
+            {
+                return true;
+            }
+            else
+            {
                 return false;
             }
         }
